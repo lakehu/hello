@@ -1,0 +1,66 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [ 
+        {
+            "name": "(gdb) Launch",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/a.out",
+            "args": [],  
+            "stopAtEntry": true,    //// false/Mandatory for gdb debugging, stop at breakpoint or gdb connect/entry!!
+            "cwd": "${workspaceRoot}",
+            "environment": [],
+            "launchCompleteCommand": "exec-run", //default 
+            "externalConsole": false,       ///  false/Mandatory for gdb debugging!!!
+             
+            "logging": {/////  added manually for log
+                "moduleLoad": true,
+                "trace": true,
+                "engineLogging": true,
+                "programOutput": true,
+                "exceptions": true,
+                "traceResponse": true
+            },
+
+            "targetArchitecture": "x86_64",   /////  added manually, this is Deprecated from Microsoft
+            "linux": {
+                "MIMode": "gdb",
+                "miDebuggerPath": "/usr/bin/gdb",
+                "program": "${workspaceFolder}/a.out",
+                "preLaunchTask": "MyGccLinuxX86Build",  //defined in tasks.json, could be called by // Ctrl Shit +B        
+             },
+             "osx": {
+                "MIMode": "lldb"
+             },
+             "windows": {
+                "MIMode": "gdb",                 
+                "miDebuggerPath": "C:\\MinGW\\gdb32\\bin\\gdb32.exe",
+                "environment": [
+                    {
+                        "name": "PATH",
+                        "value": "%PATH%;C:\\MinGW\\gdb32\\bin;C:\\MinGW\\mingw32\\bin;C:\\MinGW\\usr\\bin;C:\\MinGW\\mingw32\\bin"
+                    }
+                ], 
+              "envFile": "${workspaceFolder}/.env",
+              "program": "${workspaceFolder}/a.exe",
+              "preLaunchTask":  "MinGccWin32X86Build",  //defined in tasks.json, could be called by // Ctrl Shit +B                  
+              
+             },
+             
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            //"customLaunchSetupCommands": [
+            //    { "text": "run target", "description": "run target", "ignoreFailures": false }
+            // ], 
+           
+        }
+    ]
+}

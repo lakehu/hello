@@ -1,0 +1,62 @@
+{
+    "version": "2.0.0",
+    "tasks": [  // Ctrl Shit +B to list build task and add this into build task list
+        {
+            "label": "MyGccLinuxX86Build", 
+            "command": "gcc",
+            "args": [
+                "-Wall",
+                "-ggdb",
+                "hello.c",
+                "-o",
+                "a.out"
+            ],
+      
+            "problemMatcher": {
+                "owner": "cpp",
+                "fileLocation": [
+                    "relative",
+                    "${workspaceFolder}"
+                ],
+                "pattern": {
+                    "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+                    "file": 1,
+                    "line": 2,
+                    "column": 3,
+                    "severity": 4,
+                    "message": 5
+                }
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true  ///  Default build option for Ctrl/Shift + B
+            }
+        },
+        ////  MinGW GCC auto build still has issue
+        ////  Manual build is necesary
+        ////  Lake 2019
+        {
+            "label": "MinGccWin32X86Build",
+            
+            "command": "MinGWenvsetup.bat",
+            "args": [ 
+            ], 
+            
+            "problemMatcher": {
+                "owner": "cpp",
+                "fileLocation": [
+                    "relative",
+                    "${workspaceFolder}"
+                ],
+                "pattern": {
+                    "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+                    "file": 1,
+                    "line": 2,
+                    "column": 3,
+                    "severity": 4,
+                    "message": 5
+                }
+            },             
+        }
+    ]
+}

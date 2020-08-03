@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1514140574 source:c:\work\cb-hello\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1514140574 source:c:\work\hello\cb-hello\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1514140574 source:c:\work\hello\hello.c
+	<stdio.h>
+	<stdlib.h>
+
+1561017864 source:c:\lake\crossplatform\codeblocks\hello\src\hello.c
+	<stdio.h>
+	<stdlib.h>
+
