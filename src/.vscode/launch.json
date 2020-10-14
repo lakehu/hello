@@ -61,6 +61,21 @@
             //    { "text": "run target", "description": "run target", "ignoreFailures": false }
             // ], 
            
+        },
+
+        {
+            
+                "name": "VS2019 build and debug active file",
+                "type": "cppvsdbg",
+                "request": "launch",
+                "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
+                "args": [],
+                "stopAtEntry": false,
+                "cwd": "${workspaceFolder}",
+                "environment": [],
+                "externalConsole": false,
+                "preLaunchTask": "VS2019 build"
+            
         }
     ]
 }

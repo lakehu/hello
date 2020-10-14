@@ -57,6 +57,25 @@
                     "message": 5
                 }
             },             
-        }
+        },
+
+        {            
+                "type": "shell",
+                "label": "VS2019 build",
+                "command": "cl.exe",
+                "args": [
+                  "/Zi",
+                  "/EHsc",
+                  "/Fe:",
+                  "${fileDirname}\\${fileBasenameNoExtension}.exe",
+                  "${file}"
+                ],
+                "problemMatcher": ["$msCompile"],
+                "group": {
+                  "kind": "build",
+                  "isDefault": true
+                }
+              
+          }
     ]
 }
