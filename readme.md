@@ -1,4 +1,13 @@
 
+
+20201015
+1. Cmake try 
+ cmake-3.5.2-win32-x86\bin\cmake.exe  -G  "NMake Makefiles"  . 
+   
+
+
+Instroduce:
+
 This project is used to demo vscode debug both locally win/X86 and remotely by RemoteSSH with code/insder version.
 
 
