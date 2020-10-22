@@ -3,27 +3,20 @@
 
     "configurations": [
         {
-            "name": "MinGW",
+            "name": "Gcc",
             "defines": [
                 "_DEBUG",
                 "UNICODE"
             ],
-            "compilerPath": "gcc.exe",
+            "compilerPath": "gcc",
             "includePath": [
-                "C:/MinGW/usr/include",
-                "C:/MinGW/mingw32/include",
-                "C:/MinGW/usr/lib/gcc/i686-pc-msys/7.3.0/include",
-                "C:/MinGW/usr/lib/gcc/i686-pc-msys/7.3.0/include-fixed", 
-                "C:/MinGW/usr/lib/../include/w32api" 
+                "/usr/include",
             ],
             "browse": {
                 "path": [
                     "${workspaceFolder}",                    
-                    "C:/MinGW/usr/include",
-                    "C:/MinGW/mingw32/include",
-                    "C:/MinGW/usr/lib/gcc/i686-pc-msys/7.3.0/include",
-                    "C:/MinGW/usr/lib/gcc/i686-pc-msys/7.3.0/include-fixed", 
-                    "C:/MinGW/usr/lib/../include/w32api" 
+                    "/usr/include",
+                    
                 ],
                 "limitSymbolsToIncludedHeaders": true,
                 "databaseFilename": ""

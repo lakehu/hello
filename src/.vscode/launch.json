@@ -8,7 +8,7 @@
             "name": "(gdb) Launch",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/a.out",
+            "program": "${fileDirname}\\${fileBasenameNoExtension}",
             "args": [],  
             "stopAtEntry": true,    //// false/Mandatory for gdb debugging, stop at breakpoint or gdb connect/entry!!
             "cwd": "${workspaceRoot}",
@@ -29,20 +29,13 @@
             "linux": {
                 "MIMode": "gdb",
                 "miDebuggerPath": "/usr/bin/gdb",
-                "program": "${workspaceFolder}/a.out",
-                "preLaunchTask": "MyGccLinuxX86Build",  //defined in tasks.json, could be called by // Ctrl Shit +B        
+                "program": "${fileDirname}\\${fileBasenameNoExtension}",
+                "preLaunchTask": "GccLinuxX86Build",  //defined in tasks.json, could be called by // Ctrl Shit +B        
              },
              "osx": {
                 "MIMode": "lldb"
              },
-             "windows": {
-                "MIMode": "gdb",                 
-                "miDebuggerPath": "gdb.exe",                
-              "envFile": "${workspaceFolder}/.env",
-              "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
-              "preLaunchTask":  "MinGccWin32X86Build",  //defined in tasks.json, could be called by // Ctrl Shit +B                  
-              
-             },
+          
              
             "setupCommands": [
                 {
