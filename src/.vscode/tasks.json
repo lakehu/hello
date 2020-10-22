@@ -32,15 +32,14 @@
                 "isDefault": true  ///  Default build option for Ctrl/Shift + B
             }
         },
-        ////  MinGW GCC auto build still has issue
-        ////  Manual build is necesary
-        ////  Lake 2019
+        ////  MinGW GCC from PATH/environment
+        ////  make sure you run VSCode from MinGW command line so as to get all enough environment like PATH etc.
+        ////  Lake 2020
         {
             "label": "MinGccWin32X86Build",
-            
-            "command": "MinGWenvsetup.bat",
-            "args": [ 
-            ], 
+            // make sure you run VSCode from MinGW command line so as to get all enough environment like PATH etc.
+            "command": "gcc.exe",
+            "args": ["-g", "${file}", "-o", "${fileDirname}\\${fileBasenameNoExtension}.exe"],
             
             "problemMatcher": {
                 "owner": "cpp",

@@ -37,15 +37,9 @@
              },
              "windows": {
                 "MIMode": "gdb",                 
-                "miDebuggerPath": "C:\\MinGW\\gdb32\\bin\\gdb32.exe",
-                "environment": [
-                    {
-                        "name": "PATH",
-                        "value": "%PATH%;C:\\MinGW\\gdb32\\bin;C:\\MinGW\\mingw32\\bin;C:\\MinGW\\usr\\bin;C:\\MinGW\\mingw32\\bin"
-                    }
-                ], 
+                "miDebuggerPath": "gdb.exe",                
               "envFile": "${workspaceFolder}/.env",
-              "program": "${workspaceFolder}/a.exe",
+              "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
               "preLaunchTask":  "MinGccWin32X86Build",  //defined in tasks.json, could be called by // Ctrl Shit +B                  
               
              },

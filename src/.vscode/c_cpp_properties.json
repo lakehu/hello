@@ -8,7 +8,7 @@
                 "_DEBUG",
                 "UNICODE"
             ],
-            "compilerPath": "C:/MinGW/usr/bin/gcc.exe",
+            "compilerPath": "gcc.exe",
             "includePath": [
                 "C:/MinGW/usr/include",
                 "C:/MinGW/mingw32/include",
