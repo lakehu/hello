@@ -35,14 +35,7 @@
              "osx": {
                 "MIMode": "lldb"
              },
-             "windows": {
-                "MIMode": "gdb",                 
-                "miDebuggerPath": "gdb.exe",                
-              "envFile": "${workspaceFolder}/.env",
-              "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
-              "preLaunchTask":  "MinGccWin32X86Build",  //defined in tasks.json, could be called by // Ctrl Shit +B                  
-              
-             },
+          
              
             "setupCommands": [
                 {

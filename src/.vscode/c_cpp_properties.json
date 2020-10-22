@@ -3,12 +3,12 @@
 
     "configurations": [
         {
-            "name": "MinGW",
+            "name": "Gcc",
             "defines": [
                 "_DEBUG",
                 "UNICODE"
             ],
-            "compilerPath": "gcc.exe",
+            "compilerPath": "gcc",
             "includePath": [
                 "C:/MinGW/usr/include",
                 "C:/MinGW/mingw32/include",

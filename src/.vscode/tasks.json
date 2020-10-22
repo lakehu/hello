@@ -32,30 +32,6 @@
                 "isDefault": true  ///  Default build option for Ctrl/Shift + B
             }
         },
-        ////  MinGW GCC from PATH/environment
-        ////  make sure you run VSCode from MinGW command line so as to get all enough environment like PATH etc.
-        ////  Lake 2020
-        {
-            "label": "MinGccWin32X86Build",
-            // make sure you run VSCode from MinGW command line so as to get all enough environment like PATH etc.
-            "command": "gcc.exe",
-            "args": ["-g", "${file}", "-o", "${fileDirname}\\${fileBasenameNoExtension}.exe"],
-            
-            "problemMatcher": {
-                "owner": "cpp",
-                "fileLocation": [
-                    "relative",
-                    "${workspaceFolder}"
-                ],
-                "pattern": {
-                    "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
-                    "file": 1,
-                    "line": 2,
-                    "column": 3,
-                    "severity": 4,
-                    "message": 5
-                }
-            },             
-        }
+         
     ]
 }
