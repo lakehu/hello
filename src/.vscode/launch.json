@@ -10,13 +10,20 @@
             "request": "launch",  //attch will use pid, do not use it. 
             "program": "${workspaceFolder}/hello", 
             "args": [],
-            "stopAtEntry": true,    //// false/Mandatory for gdb debugging, stop at breakpoint or gdb connect/entry!!
+            "stopAtEntry": false,    //// false/Mandatory for gdb debugging, stop at breakpoint or gdb connect/entry!!
             "cwd": "${workspaceRoot}",
             "environment": [],
-            "launchCompleteCommand": "exec-run", //attach mode, no stop 
-            "externalConsole": true,       ///  false/Mandatory for gdb debugging!!!
+            "launchCompleteCommand": "exec-continue", //attach mode, no stop 
+            "externalConsole": false,       ///  false/Mandatory for gdb debugging!!!
 
-         
+            "logging": {/////  added manually for log
+                "moduleLoad": true,
+                //"trace": true,
+                "engineLogging": true,
+                "programOutput": true,
+                "exceptions": true,
+                //"traceResponse": true
+            },
             "MIMode": "gdb", 
             "setupCommands": [
                 {
@@ -25,7 +32,21 @@
                     "ignoreFailures": true,
                     //"set follow-fork-mode":"child"
                 },
- 
+                {
+                "description": "set target-async on",
+                "text": "set target-async on",                
+                "ignoreFailures": true,
+                },                
+                {
+                    "description": "set  pagination  off",
+                    "text": "set  pagination  off",                
+                    "ignoreFailures": true,
+                }, 
+                {
+                    "description": "set  non-stop  on",
+                    "text": "set  non-stop  on",                
+                    "ignoreFailures": true,
+                },
             ],
             "preLaunchTask": "Build and run",   ///start gdbserver in backgroud 
             ///"preLaunchTask": "build",
