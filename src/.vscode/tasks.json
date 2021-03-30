@@ -1,37 +1,44 @@
 {
+    // See https://go.microsoft.com/fwlink/?LinkId=733558 
+    // for the documentation about the tasks.json format
     "version": "2.0.0",
-    "tasks": [  // Ctrl Shit +B to list build task and add this into build task list
+    "tasks": [
         {
-            "label": "MyGccLinuxX86Build", 
-            "command": "gcc",
-            "args": [
-                "-Wall",
-                "-ggdb",
-                "hello.c",
-                "-o",
-                "a.out"
-            ],
-      
-            "problemMatcher": {
-                "owner": "cpp",
-                "fileLocation": [
-                    "relative",
-                    "${workspaceFolder}"
-                ],
-                "pattern": {
-                    "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
-                    "file": 1,
-                    "line": 2,
-                    "column": 3,
-                    "severity": 4,
-                    "message": 5
-                }
-            },
+            "type": "shell",
+            "label": "build",
+            "command": "CC=/home/lhu3/usr/local/kreatv/toolchain/arm23/2.0.3/bin/aarch64-kreatv-linux-gnu-gcc CFLAGS=-ggdb make hello",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },            
             "group": {
                 "kind": "build",
-                "isDefault": true  ///  Default build option for Ctrl/Shift + B
+                "isDefault": true
             }
         },
-         
+        {
+            "type": "shell",
+            "label": "run",
+            "command": "${workspaceFolder}/.vscode/myprepare.sh",
+            "args": [
+                "${workspaceFolder}/arm23/${workspaceFolderBasename}",  // build elf target file
+                "lake",          // ssh user of ARM Target NFS rootfs 
+                "10.213.7.110",  // ssh server IP of ARM Target NFS rootfs
+                "/home/lake/nfs/rootdisk-5202freesat/bin/${workspaceFolderBasename}",
+                "root",          // ssh user on  ARM Target 
+                "10.213.7.79",  // IP address of ARM Target 
+                "1234"   // GDB server listing port on ARM Target 
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            }
+        },
+        {
+            "label": "Build and run",
+            "dependsOrder":"sequence",
+            "dependsOn": [
+                "build",
+                "run",
+            ]
+        }  
     ]
 }

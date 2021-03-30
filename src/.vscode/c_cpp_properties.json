@@ -1,37 +1,16 @@
 {
-    
-
     "configurations": [
         {
-            "name": "Gcc",
-            "defines": [
-                "_DEBUG",
-                "UNICODE"
-            ],
-            "compilerPath": "gcc",
+            "name": "Linux",
             "includePath": [
-                "C:/MinGW/usr/include",
-                "C:/MinGW/mingw32/include",
-                "C:/MinGW/usr/lib/gcc/i686-pc-msys/7.3.0/include",
-                "C:/MinGW/usr/lib/gcc/i686-pc-msys/7.3.0/include-fixed", 
-                "C:/MinGW/usr/lib/../include/w32api" 
+                "${workspaceFolder}/**"
             ],
-            "browse": {
-                "path": [
-                    "${workspaceFolder}",                    
-                    "C:/MinGW/usr/include",
-                    "C:/MinGW/mingw32/include",
-                    "C:/MinGW/usr/lib/gcc/i686-pc-msys/7.3.0/include",
-                    "C:/MinGW/usr/lib/gcc/i686-pc-msys/7.3.0/include-fixed", 
-                    "C:/MinGW/usr/lib/../include/w32api" 
-                ],
-                "limitSymbolsToIncludedHeaders": true,
-                "databaseFilename": ""
-            }
+            "defines": [],
+            "compilerPath": "/usr/lib64/ccache/gcc",
+            "cStandard": "c11",
+            "cppStandard": "c++14",
+            "intelliSenseMode": "clang-x64"
         }
     ],
     "version": 4
 }
-
-
- 
