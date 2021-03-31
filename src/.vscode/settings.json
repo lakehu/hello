@@ -1,0 +1,14 @@
+{
+    "files.exclude": {
+        "*.a": true,
+        "*.exe": true,
+        "*.o": true,
+        "*.obj": true,
+        "*.so": true,
+        "CMakeFiles": true,
+        "Debug": true,
+        "MinSizeRel": true,
+        "Release": true,
+        "RelWithDebInfo": true
+    }
+}
