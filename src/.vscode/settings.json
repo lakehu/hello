@@ -1,0 +1,11 @@
+{
+    "files.exclude": {
+        "*.a": true,
+        "*.exe": true,
+        "*.o": true,
+        "*.obj": true,
+        "*.so": true,
+        "hello": true,
+        "a.out": true,
+    }
+}
