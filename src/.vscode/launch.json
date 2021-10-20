@@ -68,13 +68,13 @@
                 "name": "VS2019 build and debug active file",
                 "type": "cppvsdbg",
                 "request": "launch",
-                "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
+                "program": "${workspaceFolder}\\hello.exe",
+                "symbolSearchPath": "${workspaceFolder}",
                 "args": [],
                 "stopAtEntry": false,
                 "cwd": "${workspaceFolder}",
                 "environment": [],
-                "externalConsole": false,
-                "preLaunchTask": "VS2019 build"
+                "preLaunchTask": "VS build"
             
         }
     ]

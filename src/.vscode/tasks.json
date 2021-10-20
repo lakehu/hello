@@ -58,17 +58,27 @@
                 }
             },             
         },
-
+        {
+            "label": "vc setup on vscode startup",
+            "type": "shell",
+            "command": "npm run webpack",
+            "windows": {
+              "command": "\"c:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Auxiliary\\Build\\vcvars64.bat\""
+            },
+            "presentation": {
+              "reveal": "always",
+              "panel": "new"
+            },
+            "runOptions": { "runOn": "folderOpen" }
+        },
         {            
                 "type": "shell",
-                "label": "VS2019 build",
-                "command": "cl.exe",
+                "label": "VS build",
+                "command": "cl",
                 "args": [
                   "/Zi",
                   "/EHsc",
-                  "/Fe:",
-                  "${fileDirname}\\${fileBasenameNoExtension}.exe",
-                  "${file}"
+                  "${workspaceFolder}\\*.c",
                 ],
                 "problemMatcher": ["$msCompile"],
                 "group": {
