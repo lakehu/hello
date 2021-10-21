@@ -1,5 +1,19 @@
 {
     "version": "2.0.0",
+    "windows": {
+        "options": {
+          "shell": {
+            "executable": "cmd.exe",
+            "args": [
+              "/C",
+              // The path to VsDevCmd.bat depends on the version of Visual Studio you have installed.
+              "\"C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/Tools/VsDevCmd.bat\"",
+              "&&"
+            ]
+          }
+        }
+      },
+
     "tasks": [  // Ctrl Shit +B to list build task and add this into build task list
         {
             "label": "MyGccLinuxX86Build", 
@@ -57,19 +71,6 @@
                     "message": 5
                 }
             },             
-        },
-        {
-            "label": "vc setup on vscode startup",
-            "type": "shell",
-            "command": "npm run webpack",
-            "windows": {
-              "command": "\"c:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Auxiliary\\Build\\vcvars64.bat\""
-            },
-            "presentation": {
-              "reveal": "always",
-              "panel": "new"
-            },
-            "runOptions": { "runOn": "folderOpen" }
         },
         {            
                 "type": "shell",
