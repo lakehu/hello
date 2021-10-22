@@ -1,4 +1,7 @@
 
+202110
+1. Debug with Windbg, build with vc6
+
 
 20201015
 1. Cmake try 
