@@ -1,0 +1,11 @@
+bin
+obj
+*.pdb
+*.exe
+*.o
+*.obj
+*.dll
+*.a
+*.so
+a.out
+
